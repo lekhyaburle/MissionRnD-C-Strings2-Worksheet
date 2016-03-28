@@ -14,14 +14,28 @@ Note:Dont modify original string Neglect Spaces at the right end and at left end
 char * get_last_word(char * str){
 	if (str==NULL)
 	return NULL;
-	char *str1, *str2;;
-	int temp = 20;
-	str1 = (char *)malloc(sizeof(char *)*temp); str2 = (char *)malloc(sizeof(char *)*temp);
-	str1 = strtok(str, "");
-	while (str1 != NULL)
+	char *str1;
+	int n=0,i,j=0;
+	while (str[n] != '\0')
 	{
-		str2 = str1;
-		str1 = strtok(NULL, "");
+		n++;
 	}
-	return str2;
+	i = n;
+	str1 = (char *)malloc(sizeof(char *)*n);
+	for (i = n; i > 0; i--)
+	{
+		if (str[i] == ' ')
+		{
+			i++;
+			while (str[i] != '\0')
+			{
+				str1[j] = str[i];
+				j++;
+				i++;
+			}
+			break;
+		}
+	}
+	str1[j] = '\0';
+	return str1;
 }
