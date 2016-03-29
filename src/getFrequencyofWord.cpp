@@ -27,7 +27,7 @@ int count_word_in_str_way_1(char *str, char *word){
 	for (m = 0; m <= i-j; m++)
 	{
 			 k = 1;
-			for (n = m; n < m+j; n++)
+			for (n = m; n <m+j; n++)
 			{
 				if (str[n] != word[n - m])
 				{
